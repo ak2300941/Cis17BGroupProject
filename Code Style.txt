@@ -1,0 +1,26 @@
+White-space and Braces:
+    1. Since Qt uses spaces by default so shall we
+    2. In the case of optional braces ( a one line if/else ) please use a brace for readability
+    
+Naming Convention:
+    1. We will be using camelCase as the convention for functions, variables, and classes. (eg getStuff )
+    2. Classes first letter should be capitalized. (eg MainWindow)
+    
+Documentation:
+    1. To make this easy on writing the doxygen in the end please include documentation on any new function.
+    
+    /** 
+      * @param something a boolean setting something
+      * @return stuff that is extra useful
+      * 
+      * This method does unbelievably useful things.  
+      * And returns exceptionally useful results.
+      * Use it everyday with good health.
+      */
+    int getStuff( bool something ){
+        return stuff
+    }
+    
+    for more examples look at http://en.wikipedia.org/wiki/Doxygen
+Misc:
+    1. If you make a //TODO comment or something like that please sign you name at the end with two dashes ( eg //this needs to be working duh --Michael )
