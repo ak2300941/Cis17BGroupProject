@@ -29,3 +29,8 @@ void MainWindow::on_pushButton_2_clicked()
     k->show();
     this->close();
 }
+
+void MainWindow::on_actionExit_triggered()
+{
+    this->close();
+}
