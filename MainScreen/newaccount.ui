@@ -35,7 +35,7 @@
      <x>20</x>
      <y>10</y>
      <width>351</width>
-     <height>80</height>
+     <height>51</height>
     </rect>
    </property>
    <property name="title">
@@ -70,17 +70,6 @@
      <string>Username</string>
     </property>
    </widget>
-   <zorder>lineEdit</zorder>
-   <zorder>label_4</zorder>
-   <zorder>lineEdit_4</zorder>
-   <zorder>label_5</zorder>
-   <zorder>lineEdit_2</zorder>
-   <zorder>label_2</zorder>
-   <zorder>lineEdit_3</zorder>
-   <zorder>label_3</zorder>
-   <zorder>lineEdit_5</zorder>
-   <zorder>lineEdit</zorder>
-   <zorder>label</zorder>
   </widget>
   <widget class="QGroupBox" name="groupBox_2">
    <property name="geometry">
@@ -123,11 +112,6 @@
      <string>Email</string>
     </property>
    </widget>
-   <zorder>lineEdit_2</zorder>
-   <zorder>label_2</zorder>
-   <zorder>label_2</zorder>
-   <zorder>lineEdit_2</zorder>
-   <zorder>label_2</zorder>
   </widget>
   <widget class="QGroupBox" name="groupBox_3">
    <property name="geometry">
@@ -199,18 +183,6 @@
      <string>Confirm</string>
     </property>
    </widget>
-   <zorder>lineEdit_3</zorder>
-   <zorder>lineEdit_4</zorder>
-   <zorder>label_3</zorder>
-   <zorder>label_4</zorder>
-   <zorder>lineEdit_3</zorder>
-   <zorder>lineEdit_4</zorder>
-   <zorder>label_3</zorder>
-   <zorder>label_4</zorder>
-   <zorder>lineEdit_3</zorder>
-   <zorder>lineEdit_4</zorder>
-   <zorder>label_3</zorder>
-   <zorder>label_4</zorder>
   </widget>
   <widget class="QGroupBox" name="groupBox_4">
    <property name="geometry">
@@ -253,10 +225,6 @@
      <string>Phone</string>
     </property>
    </widget>
-   <zorder>lineEdit_5</zorder>
-   <zorder>label_5</zorder>
-   <zorder>lineEdit_5</zorder>
-   <zorder>label_5</zorder>
   </widget>
  </widget>
  <resources/>
