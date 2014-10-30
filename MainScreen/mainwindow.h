@@ -2,6 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "QGraphicsScene"
+#include "QtCore"
+#include "QtGui"
 
 namespace Ui {
 class MainWindow;
@@ -22,8 +25,12 @@ private slots:
 
     void on_actionExit_triggered();
 
+    void paintEvent(QPaintEvent *event);
+
 private:
     Ui::MainWindow *ui;
+    QGraphicsScene *scene;
+    QTimer *timer;
 };
 
 #endif // MAINWINDOW_H
