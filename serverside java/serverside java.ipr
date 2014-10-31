@@ -50,24 +50,24 @@
   <component name="libraryTable">
     <library name="JDBC mysql 5.1.33">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/../../../java api/JDBC/mysql-connector-java-5.1.33-bin.jar!/" />
+        <root url="jar://$PROJECT_DIR$/Rcc App/lib/mysql-connector-java-5.1.33-bin.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$PROJECT_DIR$/../../../java api/JDBC/mysql-connector-java-5.1.33.zip!/mysql-connector-java-5.1.33/docs" />
+        <root url="jar://$PROJECT_DIR$/Rcc App/lib/mysql-connector-java-5.1.33.zip!/mysql-connector-java-5.1.33/docs" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$PROJECT_DIR$/../../../java api/JDBC/mysql-connector-java-5.1.33.zip!/mysql-connector-java-5.1.33/src" />
+        <root url="jar://$PROJECT_DIR$/Rcc App/lib/mysql-connector-java-5.1.33.zip!/mysql-connector-java-5.1.33/src" />
       </SOURCES>
     </library>
     <library name="Jsoup 1.8.1">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/../../../java api/jsoup/jsoup-1.8.1.jar!/" />
+        <root url="jar://$PROJECT_DIR$/Rcc App/lib/jsoup-1.8.1.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$PROJECT_DIR$/../../../java api/jsoup/jsoup-1.8.1-javadoc.jar!/" />
+        <root url="jar://$PROJECT_DIR$/Rcc App/lib/jsoup-1.8.1-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$PROJECT_DIR$/../../../java api/jsoup/jsoup-1.8.1-sources.jar!/" />
+        <root url="jar://$PROJECT_DIR$/Rcc App/lib/jsoup-1.8.1-sources.jar!/" />
       </SOURCES>
     </library>
   </component>
