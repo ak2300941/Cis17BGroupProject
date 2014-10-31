@@ -41,7 +41,7 @@ int main(int argc, char** argv) {
 void createAcc(){
     //Creating Account Class
     HashAccounts test;
-    int checki=1,checkp=1;
+    int checki=1;
     do{
         //Input ID and Password
         test.getInfo();
@@ -67,23 +67,7 @@ void createAcc(){
                 break;
             }
         }
-        fstream datapass;
-        datapass.open("hashp.txt");
-        while(datapass.is_open()){
-            getline(datapass,line);
-            if(line==pass){
-                cout<<"Password is already being used"<<endl;
-                datapass.close();
-                checkp=0;
-                break;
-            }
-            if(datapass.eof()){
-                checkp=1;
-                break;
-            }
-        }
-        cout<<endl;
-    }while(checki==0&&checkp==0);
+    }while(checki==0);
     //Push ID Hash to file
     fstream dataid;
     dataid.open("hashid.txt",fstream::out|fstream::app);
