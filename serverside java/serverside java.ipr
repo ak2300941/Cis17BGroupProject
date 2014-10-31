@@ -5,8 +5,8 @@
       <output-path>$PROJECT_DIR$/out/artifacts/Rcc_App_jar</output-path>
       <root id="archive" name="Rcc App.jar">
         <element id="module-output" name="Rcc App" />
-        <element id="extracted-dir" path="$PROJECT_DIR$/../../../java api/JDBC/mysql-connector-java-5.1.33-bin.jar" path-in-jar="/" />
-        <element id="extracted-dir" path="$PROJECT_DIR$/../../../java api/jsoup/jsoup-1.8.1.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$PROJECT_DIR$/Rcc App/lib/jsoup-1.8.1.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$PROJECT_DIR$/Rcc App/lib/mysql-connector-java-5.1.33-bin.jar" path-in-jar="/" />
       </root>
     </artifact>
   </component>
@@ -41,7 +41,7 @@
       <module fileurl="file://$PROJECT_DIR$/Rcc App/Rcc App.iml" filepath="$PROJECT_DIR$/Rcc App/Rcc App.iml" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="1.7" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" assert-keyword="true" jdk-15="true" project-jdk-name="1.7" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="VcsDirectoryMappings">
