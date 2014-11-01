@@ -17,13 +17,15 @@ SOURCES += main.cpp\
     confirm.cpp \
     afterloginmenu.cpp \
     forgot.cpp \
-    newaccount.cpp
+    newaccount.cpp \
+    sha1.cpp
 
 HEADERS  += mainwindow.h \
     confirm.h \
     afterloginmenu.h \
     forgot.h \
-    newaccount.h
+    newaccount.h \
+    sha1.h
 
 FORMS    += mainwindow.ui \
     confirm.ui \

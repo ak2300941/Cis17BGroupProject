@@ -7,6 +7,10 @@
 #include <QGraphicsScene>
 #include <Qwidget>
 #include <QtCore>
+#include <QMessageBox>
+#include <QFile>
+#include <QTextStream>
+#include "sha1.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -34,6 +38,8 @@ MainWindow::MainWindow(QWidget *parent) :
     painter.drawConvexPolygon(point,3);
     */
     //! [0] //! [2]
+    checke=0;
+    checkp=0;
 
 }
 
@@ -44,9 +50,60 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    AfterLoginMenu *k=new AfterLoginMenu;
-    k->show();
-    this->close();
+    if(ui->lineEmail->text()==NULL){
+        QMessageBox msgBox;
+        msgBox.setText("Write an email.");
+        msgBox.exec();
+        checke=0;
+    }
+    if(ui->lineEmail->text()!=NULL){
+        email=ui->lineEmail->text();
+        checke=1;
+    }
+    if(ui->linePassword->text()==NULL){
+        QMessageBox msgBox;
+        msgBox.setText("Write a password.");
+        msgBox.exec();
+        checkp=0;
+    }
+    if(ui->linePassword->text()!=NULL){
+        password=ui->linePassword->text();
+        checkp=1;
+    }
+    //If both email and password is filled in do this
+    if(checke==1&&checkp==1){
+        //Hash email and password
+        int eSize=email.size();
+        int pSize=password.size();
+        unsigned char ehash[20],phash[20];
+        char ehexstring[41],phexstring[41];
+        const char *emailc=email.toStdString().c_str();
+        const char *passc=password.toStdString().c_str();
+        sha1::calc(emailc,eSize,ehash);
+        sha1::toHexString(ehash,ehexstring);
+        sha1::calc(passc,pSize,phash);
+        sha1::toHexString(phash,phexstring);
+        //Save email hash to text
+        QString filename1="email.txt";
+        QFile eFile(filename1);
+        if(eFile.open(QFile::WriteOnly|QFile::Append)){
+            QTextStream out(&eFile);
+            out<<ehexstring<<endl;
+        }
+        eFile.close();
+        //Save password hash to text
+        QString filename2="password.txt";
+        QFile pFile(filename2);
+        if(pFile.open(QFile::WriteOnly|QFile::Append)){
+            QTextStream out(&pFile);
+            out<<phexstring<<endl;
+        }
+        pFile.close();
+        //Open Next Window
+        AfterLoginMenu *k=new AfterLoginMenu;
+        k->show();
+        this->close();
+    }
 }
 
 void MainWindow::on_pushButton_2_clicked()

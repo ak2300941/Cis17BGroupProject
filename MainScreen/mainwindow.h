@@ -5,6 +5,7 @@
 #include "QGraphicsScene"
 #include "QtCore"
 #include "QtGui"
+#include "QString"
 
 namespace Ui {
 class MainWindow;
@@ -31,6 +32,9 @@ private:
     Ui::MainWindow *ui;
     QGraphicsScene *scene;
     QTimer *timer;
+    //Account Stuff
+    QString email,password;
+    bool checke,checkp;
 };
 
 #endif // MAINWINDOW_H

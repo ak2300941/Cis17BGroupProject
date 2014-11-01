@@ -44,7 +44,7 @@
     <property name="title">
      <string>Login</string>
     </property>
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QLineEdit" name="lineEmail">
      <property name="geometry">
       <rect>
        <x>90</x>
@@ -63,7 +63,7 @@
       <string>Email</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_2">
+    <widget class="QLineEdit" name="linePassword">
      <property name="geometry">
       <rect>
        <x>90</x>
