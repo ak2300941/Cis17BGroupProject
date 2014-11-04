@@ -13,7 +13,7 @@ import java.util.logging.Logger;
  * Time: 3:05 PM
  */
 public class Database {
-	private final String MODE = "live";
+	private String MODE;
 	private String url;
 	private String user;
 	private String password;
@@ -22,10 +22,12 @@ public class Database {
 	 * Create Database by prop file
 	 *
 	 * @param fileIn
+	 * @param mode
 	 */
-	public Database( String fileIn ) {
+	public Database( String fileIn, String mode ) {
 		try {
 			Properties props = readProps( fileIn );
+			this.MODE = mode;
 			this.url = props.getProperty( MODE + ".url" );
 			this.user = props.getProperty( MODE + ".user" );
 			this.password = props.getProperty( MODE + ".password" );
@@ -40,8 +42,10 @@ public class Database {
 	 * @param url
 	 * @param user
 	 * @param password
+	 * @param mode
 	 */
-	public Database( String url, String user, String password ) {
+	public Database( String url, String user, String password, String mode ) {
+		this.MODE = mode;
 		this.url = url;
 		this.user = user;
 		this.password = password;
@@ -114,7 +118,7 @@ public class Database {
 
 		if ( checkFirst ) {
 			if ( checkTableExists( table ) ) {
-				Main.Pl( "Table already exists" );
+//				Main.Pl( "Table already exists" );
 				return;
 			}
 		}
@@ -122,6 +126,7 @@ public class Database {
 		try{
 			Statement state = connection.createStatement();
 			state.executeUpdate( query );
+			state.executeUpdate( "FLUSH TABLES" );
 			state.close();
 			connection.close();
 		} catch ( SQLException e ){
