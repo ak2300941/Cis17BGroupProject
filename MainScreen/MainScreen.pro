@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -18,14 +18,18 @@ SOURCES += main.cpp\
     afterloginmenu.cpp \
     forgot.cpp \
     newaccount.cpp \
-    sha1.cpp
+    sha1.cpp \
+    database.cpp \
+    settings.cpp
 
 HEADERS  += mainwindow.h \
     confirm.h \
     afterloginmenu.h \
     forgot.h \
     newaccount.h \
-    sha1.h
+    sha1.h \
+    database.h \
+    settings.h
 
 FORMS    += mainwindow.ui \
     confirm.ui \
