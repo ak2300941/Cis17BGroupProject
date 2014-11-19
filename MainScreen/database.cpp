@@ -1,3 +1,5 @@
+#include "database.h"
+
 #include <QT>
 #include <QtCore>
 #include <QtGui>
