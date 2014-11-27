@@ -34,7 +34,11 @@ private:
     QTimer *timer;
     //Account Stuff
     QString email,password;
+    //Checks if input is empty
     bool checke,checkp;
+    //Checks if email has @ and .com
+    bool check1,check2;
+    bool checkee;
 };
 
 #endif // MAINWINDOW_H

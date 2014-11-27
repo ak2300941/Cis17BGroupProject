@@ -38,8 +38,11 @@ MainWindow::MainWindow(QWidget *parent) :
     painter.drawConvexPolygon(point,3);
     */
     //! [0] //! [2]
+    check1=false;
+    check2=false;
     checke=0;
     checkp=0;
+
 
 }
 
@@ -50,22 +53,62 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
+    //Check if theres @ and .com (email verification)
+    email=ui->lineEmail->text();
+    //Find @
+    QString string1="@";
+    if(email.contains(string1)){
+        check1=true;
+
+    }
+    //If didnt find @
+    else{
+        check1=false;
+    }
+    //Find .com
+    QString string2=".com";
+    if(email.contains(string2)){
+        check2=true;
+    }
+    //If didnt find .com
+    else{
+        check2=false;
+    }
+    //Valid email
+    if(check1==true&&check2==true){
+        QMessageBox test;
+        test.setText("Valid Email");
+        test.exec();
+        checkee=true;
+    }
+    //Not Valid email
+    else{
+        QMessageBox test;
+        test.setText("Not a valid Email");
+        test.exec();
+        checkee=false;
+    }
+
+    //If email input is empty
     if(ui->lineEmail->text()==NULL){
         QMessageBox msgBox;
         msgBox.setText("Write an email.");
         msgBox.exec();
         checke=0;
     }
-    if(ui->lineEmail->text()!=NULL){
+    //If email input is not empty and has a email format (@, .com)
+    if(ui->lineEmail->text()!=NULL&&checkee==true){
         email=ui->lineEmail->text();
         checke=1;
     }
+    //If password input is empty
     if(ui->linePassword->text()==NULL){
         QMessageBox msgBox;
         msgBox.setText("Write a password.");
         msgBox.exec();
         checkp=0;
     }
+    //If password input is not empty
     if(ui->linePassword->text()!=NULL){
         password=ui->linePassword->text();
         checkp=1;
@@ -86,6 +129,7 @@ void MainWindow::on_pushButton_clicked()
         //Save email hash to text
         QString filename1="email.txt";
         QFile eFile(filename1);
+        //Doesn't overwrite when writing to file
         if(eFile.open(QFile::WriteOnly|QFile::Append)){
             QTextStream out(&eFile);
             out<<ehexstring<<endl;
@@ -94,6 +138,7 @@ void MainWindow::on_pushButton_clicked()
         //Save password hash to text
         QString filename2="password.txt";
         QFile pFile(filename2);
+        //Doesn't overwrite when writing to file
         if(pFile.open(QFile::WriteOnly|QFile::Append)){
             QTextStream out(&pFile);
             out<<phexstring<<endl;
