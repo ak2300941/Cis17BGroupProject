@@ -3,19 +3,21 @@
 #include <QTimer>
 #include <QTime>
 #include <QLabel>
+#include <QtDebug>
 #include "homescreen.h"
 #include "configdialog.h"
+#include "io.h"
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
+    QApplication app(argc, argv);
     LoginPage w;
     w.show();
     //HomeScreen *k = new HomeScreen;
     //k->show()
 
 
-    return a.exec();
+    return app.exec();
 }
 
 /*

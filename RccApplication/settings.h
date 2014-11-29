@@ -10,6 +10,7 @@ public:
 
     bool loadSettings();
     void saveSetting( QString, QString );
+    void appendSetting( QString, QString, QString delimiter = "|" );
 
     QString getSetting( QString );
 

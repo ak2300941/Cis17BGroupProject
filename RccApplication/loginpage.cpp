@@ -8,7 +8,9 @@
 #include <QMessageBox>
 #include <QFile>
 #include <QTextStream>
+#include <QCryptographicHash>
 #include "sha1.h"
+#include "io.h"
 
 LoginPage::LoginPage(QWidget *parent) :
     QMainWindow(parent),
@@ -20,8 +22,8 @@ LoginPage::LoginPage(QWidget *parent) :
     this->setAutoFillBackground(true);
     this->setPalette(palette);
 
-    checke=0;
-    checkp=0;
+    checke = 0;
+    checkp = 0;
 
 }
 
@@ -30,8 +32,7 @@ LoginPage::~LoginPage()
     delete ui;
 }
 
-void LoginPage::on_Login_clicked()
-{
+void LoginPage::on_Login_clicked() {
     /*******************
     *** Verification ***
     ***    Andrew    ***
@@ -45,54 +46,50 @@ void LoginPage::on_Login_clicked()
         checke = 1;
     }
     else if( ui->Password->text() == NULL ) {
-        QMessageBox msgBox;
-        LoginPage *k = new LoginPage;
-        this->close();
+        QString msg;
         if( ui->Email->text() == NULL ) {
-            msgBox.setText( "Please write an E-mail and password." );
-            msgBox.exec();
+            msg = "Please write an E-mail and password.";
             checke = 0;
             checkp = 0;
         }
         else{
-            msgBox.setText( "Please enter a password." );
-            msgBox.exec();
+            msg = "Please enter a password.";
             checkp = 0;
         }
-        k->show();
+        QMessageBox::information(this, tr("Missing Fields"), msg );
     }
     //If both email and password is filled in do this
     if( checke == 1 && checkp == 1 ) {
         //Hash email and password
-        int eSize = email.size();
-        int pSize = password.size();
-        unsigned char ehash[20], phash[20];
-        char ehexstring[41], phexstring[41];
-        const char *emailc = email.toStdString().c_str();
-        const char *passc = password.toStdString().c_str();
-        sha1::calc( emailc, eSize, ehash );
-        sha1::toHexString( ehash, ehexstring );
-        sha1::calc( passc, pSize, phash );
-        sha1::toHexString( phash, phexstring );
+        QByteArray emailHash = QCryptographicHash::hash( email.toUtf8(), QCryptographicHash::Sha1 );
+        QString ehexstring = emailHash.toHex();
+        QByteArray passHash = QCryptographicHash::hash( password.toUtf8(), QCryptographicHash::Sha1 );
+        QString phexstring = passHash.toHex();
         //Save email hash to text
-        QString filename1 = "email.txt";
-        QFile eFile( filename1 );
-        if( eFile.open( QFile::WriteOnly | QFile::Append ) ) {
-            QTextStream out( &eFile );
-            out << ehexstring << endl;
-        }
-        eFile.close();
-        //Save password hash to text
-        QString filename2 = "password.txt";
-        QFile pFile( filename2 );
-        if( pFile.open( QFile::WriteOnly | QFile::Append ) ) {
-            QTextStream out( &pFile );
-            out << phexstring << endl;
-        }
-        pFile.close();
-        this->close();
+        //changing the way the user/pass is writing --michael
 
+        IO io;
 
+        if( io.checkUser( ehexstring, phexstring ) ){
+            //the user is signed in
+            this->close();
+            splashInit();
+        } else {
+            QMessageBox::StandardButton reply;
+            QString msg = "Email or Password is wrong try agian?";
+            reply = QMessageBox::question(this, tr("Failed"), msg, QMessageBox::Yes | QMessageBox::No );
+            if (reply == QMessageBox::No) {
+                close();
+            }
+        }
+    }
+}
+
+/**
+ * Shows the splash screen for 5 secs after login
+ * @brief LoginPage::splashInit
+ */
+void LoginPage::splashInit() {
 
         /*************************
          * Show the Splash Image *
@@ -109,7 +106,7 @@ void LoginPage::on_Login_clicked()
         QDesktopWidget wid;
         QRect mainScreenSize = wid.availableGeometry( wid.primaryScreen() );
 
-        aWidget->move( ( mainScreenSize.width() / 2 ) - ( width / 2 ), ( mainScreenSize.height() / 2  - ( height / 2 ) );
+        aWidget->move( ( mainScreenSize.width() / 2 ) - ( width / 2 ), ( mainScreenSize.height() / 2  - ( height / 2 ) ) );
         aWidget->show();
 
         ConfigDialog *dialog = new ConfigDialog;
@@ -119,9 +116,6 @@ void LoginPage::on_Login_clicked()
          * *****************************************************************/
         QTimer::singleShot( 5000, aWidget,SLOT( close() ) );
         QTimer::singleShot( 5000, dialog,SLOT( show() ) );
-    }
-
-
 }
 
 //Commented out extra work that I had to figure out but didn't quite work

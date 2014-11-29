@@ -21,8 +21,12 @@ private slots:
 
 private:
     Ui::LoginPage *ui;
+
+    void splashInit();
+
     QString email,password;
-    bool checke,checkp;
+
+    bool checke, checkp;
 };
 
 #endif // LOGINPAGE_H

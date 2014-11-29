@@ -7,7 +7,12 @@ class IO
 {
 public:
     IO();
-    QMap checkUser();
+
+    void saveUser( QString, QString );
+
+    bool checkUser( QString, QString );
+private:
+    QString userFile;
 };
 
 #endif // IO_H
