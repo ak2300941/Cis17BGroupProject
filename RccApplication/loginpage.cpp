@@ -42,8 +42,15 @@ void LoginPage::on_Login_clicked() {
     if( ( ui->Email->text() != NULL ) && ( ui->Password->text() != NULL ) ) {
         email = ui->Email->text();
         password = ui->Password->text();
-        checkp = 1;
-        checke = 1;
+        if( !email.contains( QRegExp( "[\\w|.|-]*@\\w*\\.[\\w|.]*" ) ) ){
+            checkp = 1;
+            checke = 0;
+            QMessageBox::information(this, tr("Invalid Email"), "Enter a valid email" );
+        }
+        else{
+            checkp = 1;
+            checke = 1;
+        }
     }
     else if( ui->Password->text() == NULL ) {
         QString msg;

@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -20,7 +20,8 @@ SOURCES += main.cpp\
     pages.cpp \
     configdialog.cpp \
     settings.cpp \
-    io.cpp
+    io.cpp \
+    database.cpp
 
 HEADERS  += loginpage.h \
     csplashscreen.h \
@@ -29,7 +30,8 @@ HEADERS  += loginpage.h \
     pages.h \
     configdialog.h \
     setting.h \
-    io.h
+    io.h \
+    database.h
 
 FORMS    += loginpage.ui \
     homescreen.ui

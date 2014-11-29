@@ -99,6 +99,38 @@
      <string>Create Account</string>
     </property>
    </widget>
+   <widget class="QLabel" name="emailLabel">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>80</y>
+      <width>46</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Email:</string>
+    </property>
+    <property name="buddy">
+     <cstring>Email</cstring>
+    </property>
+   </widget>
+   <widget class="QLabel" name="passLabel">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>120</y>
+      <width>46</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Password:</string>
+    </property>
+    <property name="buddy">
+     <cstring>Password</cstring>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -118,6 +150,12 @@
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>Email</tabstop>
+  <tabstop>Password</tabstop>
+  <tabstop>Login</tabstop>
+  <tabstop>CreateAcc</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
