@@ -11,6 +11,7 @@
 #include <QCryptographicHash>
 #include "sha1.h"
 #include "io.h"
+#include "createaccount.h"
 
 LoginPage::LoginPage(QWidget *parent) :
     QMainWindow(parent),
@@ -42,7 +43,7 @@ void LoginPage::on_Login_clicked() {
     if( ( ui->Email->text() != NULL ) && ( ui->Password->text() != NULL ) ) {
         email = ui->Email->text();
         password = ui->Password->text();
-        if( !email.contains( QRegExp( "[\\w|.|-]*@\\w*\\.[\\w|.]*" ) ) ){
+        if( !email.contains( QRegExp( "[\\w|.|-]*@\\w*\\.[\\w|.]*" ) ) && false ){
             checkp = 1;
             checke = 0;
             QMessageBox::information(this, tr("Invalid Email"), "Enter a valid email" );
@@ -121,8 +122,14 @@ void LoginPage::splashInit() {
         /********************************************************************
          * after a set amount of time close splash image and open main menu *
          * *****************************************************************/
-        QTimer::singleShot( 5000, aWidget,SLOT( close() ) );
-        QTimer::singleShot( 5000, dialog,SLOT( show() ) );
+        QTimer::singleShot( 1000, aWidget,SLOT( close() ) );
+        QTimer::singleShot( 1000, dialog,SLOT( show() ) );
+}
+
+
+void LoginPage::on_CreateAcc_clicked() {
+    CreateAccount *create = new CreateAccount;
+    create->exec();
 }
 
 //Commented out extra work that I had to figure out but didn't quite work
@@ -171,4 +178,5 @@ animation->setEndValue(QRect(846, 390, image.width(), image.height()));
 
 animation->start();
 */
+
 

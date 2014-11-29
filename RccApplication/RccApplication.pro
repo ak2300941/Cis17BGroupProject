@@ -21,7 +21,9 @@ SOURCES += main.cpp\
     configdialog.cpp \
     settings.cpp \
     io.cpp \
-    database.cpp
+    database.cpp \
+    createaccount.cpp \
+    user.cpp
 
 HEADERS  += loginpage.h \
     csplashscreen.h \
@@ -31,10 +33,13 @@ HEADERS  += loginpage.h \
     configdialog.h \
     setting.h \
     io.h \
-    database.h
+    database.h \
+    createaccount.h \
+    user.h
 
 FORMS    += loginpage.ui \
-    homescreen.ui
+    homescreen.ui \
+    createaccount.ui
 
 RESOURCES += \
     Images.qrc

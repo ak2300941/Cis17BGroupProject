@@ -2,4 +2,7 @@
     <qresource prefix="/">
         <file>rccTigerEdited.png</file>
     </qresource>
+    <qresource prefix="/news">
+        <file>newsHeader.ini</file>
+    </qresource>
 </RCC>

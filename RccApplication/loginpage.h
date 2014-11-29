@@ -19,6 +19,8 @@ public:
 private slots:
     void on_Login_clicked();
 
+    void on_CreateAcc_clicked();
+
 private:
     Ui::LoginPage *ui;
 

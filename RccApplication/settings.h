@@ -17,6 +17,7 @@ public:
     QMap<QString, QString> getSettings();
 
     bool getIsLoaded();
+    bool settingExists( QString );
 
 private:
     QSettings *qSettings;

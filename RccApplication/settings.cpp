@@ -149,3 +149,21 @@ QMap<QString, QString> Settings::getSettings(){
 bool Settings::getIsLoaded() {
     return isLoaded;
 }
+
+/**
+ * check if a setting exists
+ * @brief Settings::settingExists
+ * @param key
+ * @return true if exists
+ * @author Michael
+ */
+bool Settings::settingExists( QString key ){
+    if( !isLoaded ){
+        loadSettings();
+    }
+    if( settings.contains( key ) ){
+        return true;
+    } else {
+        return false;
+    }
+}
