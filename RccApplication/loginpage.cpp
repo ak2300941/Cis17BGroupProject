@@ -12,6 +12,7 @@
 #include "sha1.h"
 #include "io.h"
 #include "createaccount.h"
+#include "globals.h"
 
 LoginPage::LoginPage(QWidget *parent) :
     QMainWindow(parent),
@@ -80,6 +81,9 @@ void LoginPage::on_Login_clicked() {
 
         if( io.checkUser( ehexstring, phexstring ) ){
             //the user is signed in
+            //set the global session email
+            Globals::setGlobals( email, ehexstring );
+
             this->close();
             splashInit();
         } else {

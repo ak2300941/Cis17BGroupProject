@@ -42,6 +42,8 @@
 
 #include "configdialog.h"
 #include "pages.h"
+#include "globals.h"
+
 
 ConfigDialog::ConfigDialog()
 {

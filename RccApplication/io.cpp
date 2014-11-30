@@ -29,7 +29,6 @@ void IO::saveUser( QString email, QString pass, QString role ){
 }
 
 /**
- *
  * @brief IO::checkUser
  * @param email
  * @param pass

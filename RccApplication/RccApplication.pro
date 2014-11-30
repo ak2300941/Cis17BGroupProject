@@ -23,7 +23,8 @@ SOURCES += main.cpp\
     io.cpp \
     database.cpp \
     createaccount.cpp \
-    user.cpp
+    user.cpp \
+    globals.cpp
 
 HEADERS  += loginpage.h \
     csplashscreen.h \
@@ -35,7 +36,8 @@ HEADERS  += loginpage.h \
     io.h \
     database.h \
     createaccount.h \
-    user.h
+    user.h \
+    globals.h
 
 FORMS    += loginpage.ui \
     homescreen.ui \

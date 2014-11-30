@@ -124,7 +124,7 @@ void Settings::appendSetting( QString key, QString value, QString delimiter ){
     }
     qSettings->setValue( key, value );
     qSettings->sync();
-    qDebug() << "status:" << qSettings->status();
+    qDebug() << "save status:" << qSettings->status();
 }
 
 /**

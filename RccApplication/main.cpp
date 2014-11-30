@@ -1,5 +1,6 @@
 #include "loginpage.h"
 #include <QApplication>
+#include <QtCore>
 #include <QTimer>
 #include <QTime>
 #include <QLabel>
@@ -7,10 +8,12 @@
 #include "homescreen.h"
 #include "configdialog.h"
 #include "io.h"
+#include "globals.h"
 
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
+    Globals globals;
     LoginPage w;
     w.show();
     //HomeScreen *k = new HomeScreen;
