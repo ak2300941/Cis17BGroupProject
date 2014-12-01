@@ -37,7 +37,7 @@ public:
     QLabel *typeLabel_2;
     QCheckBox *checkBox;
     QTextEdit *textInput;
-    QTextEdit *titleInput;
+    QLineEdit *titleInput;
 
     void setupUi(QDialog *newThread)
     {
@@ -54,37 +54,37 @@ public:
         label->setFont(font);
         urlInput = new QLineEdit(newThread);
         urlInput->setObjectName(QString::fromUtf8("urlInput"));
-        urlInput->setGeometry(QRect(30, 160, 261, 31));
+        urlInput->setGeometry(QRect(40, 130, 261, 31));
         typeLabel = new QLabel(newThread);
         typeLabel->setObjectName(QString::fromUtf8("typeLabel"));
-        typeLabel->setGeometry(QRect(40, 120, 51, 21));
+        typeLabel->setGeometry(QRect(40, 90, 51, 21));
         typeLabel->setFont(font);
         selectType = new QComboBox(newThread);
         selectType->setObjectName(QString::fromUtf8("selectType"));
         selectType->setGeometry(QRect(150, 10, 91, 22));
         pushButton = new QPushButton(newThread);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(30, 450, 75, 23));
+        pushButton->setGeometry(QRect(40, 420, 75, 23));
         titleInput_2 = new QLineEdit(newThread);
         titleInput_2->setObjectName(QString::fromUtf8("titleInput_2"));
-        titleInput_2->setGeometry(QRect(30, 280, 261, 21));
+        titleInput_2->setGeometry(QRect(40, 250, 261, 21));
         label_2 = new QLabel(newThread);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(30, 250, 201, 21));
+        label_2->setGeometry(QRect(40, 220, 201, 21));
         label_2->setFont(font);
         typeLabel_2 = new QLabel(newThread);
         typeLabel_2->setObjectName(QString::fromUtf8("typeLabel_2"));
-        typeLabel_2->setGeometry(QRect(40, 390, 71, 21));
+        typeLabel_2->setGeometry(QRect(50, 360, 71, 21));
         typeLabel_2->setFont(font);
         checkBox = new QCheckBox(newThread);
         checkBox->setObjectName(QString::fromUtf8("checkBox"));
-        checkBox->setGeometry(QRect(40, 420, 141, 17));
+        checkBox->setGeometry(QRect(50, 390, 141, 17));
         textInput = new QTextEdit(newThread);
         textInput->setObjectName(QString::fromUtf8("textInput"));
-        textInput->setGeometry(QRect(30, 150, 261, 91));
-        titleInput = new QTextEdit(newThread);
+        textInput->setGeometry(QRect(40, 120, 261, 91));
+        titleInput = new QLineEdit(newThread);
         titleInput->setObjectName(QString::fromUtf8("titleInput"));
-        titleInput->setGeometry(QRect(30, 60, 261, 51));
+        titleInput->setGeometry(QRect(40, 60, 261, 21));
 
         retranslateUi(newThread);
         QObject::connect(pushButton, SIGNAL(clicked()), newThread, SLOT(close()));

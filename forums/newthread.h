@@ -2,7 +2,8 @@
 #define NEWTHREAD_H
 
 #include <QDialog>
-
+#include <QString>
+#include <QFile>
 namespace Ui {
 class newThread;
 }
@@ -14,6 +15,7 @@ class newThread : public QDialog
 public:
     explicit newThread(QWidget *parent = 0);
     ~newThread();
+    void write (QString);
 
 private slots:
     void on_selectType_currentTextChanged(const QString &arg1);

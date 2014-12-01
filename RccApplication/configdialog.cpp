@@ -54,6 +54,7 @@ ConfigDialog::ConfigDialog()
     contentsWidget->setMaximumWidth(128);
     contentsWidget->setSpacing(12);
 
+
     pagesWidget = new QStackedWidget;
     pagesWidget->addWidget(new News);
     pagesWidget->addWidget(new Forums);
@@ -62,6 +63,8 @@ ConfigDialog::ConfigDialog()
     pagesWidget->addWidget(new Appointments);
     pagesWidget->addWidget(new BusSchedule);
     pagesWidget->addWidget(new About);
+    pagesWidget->setFixedWidth(800);
+    pagesWidget->setFixedHeight(600);
 
 
     QPushButton *closeButton = new QPushButton(tr("Close"));

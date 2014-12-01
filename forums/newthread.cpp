@@ -1,5 +1,7 @@
 #include "newthread.h"
 #include "ui_newthread.h"
+#include <qfile.h>
+#include <qtextstream.h>
 
 newThread::newThread(QWidget *parent) :
     QDialog(parent),
@@ -48,5 +50,11 @@ void newThread::on_pushButton_clicked()
     //Here we submit all of our data
     //To wherever we choose
     //After we close the app
+    QString currentThread = ui->titleInput->text();
+
+
+}
+void newThread::write(QString fileName){
+
 
 }

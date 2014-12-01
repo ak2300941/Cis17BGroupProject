@@ -32,6 +32,7 @@ News::News(QWidget *parent)
 Forums::Forums(QWidget *parent)
     : QWidget(parent)
 {
+    /*
     QGroupBox *updateGroup = new QGroupBox(tr("Package selection"));
     QCheckBox *systemCheckBox = new QCheckBox(tr("Update system"));
     QCheckBox *appsCheckBox = new QCheckBox(tr("Update applications"));
@@ -66,6 +67,8 @@ Forums::Forums(QWidget *parent)
     mainLayout->addWidget(startUpdateButton);
     mainLayout->addStretch(1);
     setLayout(mainLayout);
+    */
+
 }
 
 Schedule::Schedule(QWidget *parent)

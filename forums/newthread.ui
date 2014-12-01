@@ -36,8 +36,8 @@
   <widget class="QLineEdit" name="urlInput">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>160</y>
+     <x>40</x>
+     <y>130</y>
      <width>261</width>
      <height>31</height>
     </rect>
@@ -47,7 +47,7 @@
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>120</y>
+     <y>90</y>
      <width>51</width>
      <height>21</height>
     </rect>
@@ -76,8 +76,8 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>450</y>
+     <x>40</x>
+     <y>420</y>
      <width>75</width>
      <height>23</height>
     </rect>
@@ -89,8 +89,8 @@
   <widget class="QLineEdit" name="titleInput_2">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>280</y>
+     <x>40</x>
+     <y>250</y>
      <width>261</width>
      <height>21</height>
     </rect>
@@ -99,8 +99,8 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>250</y>
+     <x>40</x>
+     <y>220</y>
      <width>201</width>
      <height>21</height>
     </rect>
@@ -119,8 +119,8 @@
   <widget class="QLabel" name="typeLabel_2">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>390</y>
+     <x>50</x>
+     <y>360</y>
      <width>71</width>
      <height>21</height>
     </rect>
@@ -139,8 +139,8 @@
   <widget class="QCheckBox" name="checkBox">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>420</y>
+     <x>50</x>
+     <y>390</y>
      <width>141</width>
      <height>17</height>
     </rect>
@@ -152,20 +152,20 @@
   <widget class="QTextEdit" name="textInput">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>150</y>
+     <x>40</x>
+     <y>120</y>
      <width>261</width>
      <height>91</height>
     </rect>
    </property>
   </widget>
-  <widget class="QTextEdit" name="titleInput">
+  <widget class="QLineEdit" name="titleInput">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>40</x>
      <y>60</y>
      <width>261</width>
-     <height>51</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
@@ -179,12 +179,12 @@
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>76</x>
-     <y>461</y>
+     <x>84</x>
+     <y>427</y>
     </hint>
     <hint type="destinationlabel">
-     <x>190</x>
-     <y>457</y>
+     <x>155</x>
+     <y>426</y>
     </hint>
    </hints>
   </connection>
