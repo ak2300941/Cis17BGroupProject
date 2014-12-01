@@ -13,11 +13,14 @@
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
-    Globals globals;
-    LoginPage w;
-    w.show();
-    //HomeScreen *k = new HomeScreen;
-    //k->show()
+   // Globals globals;
+    //Uncomment this stuff, then recomment
+    //ConfigDialog
+    //LoginPage w;
+   // w.show();
+    ConfigDialog *k = new ConfigDialog;
+    k->show();
+
 
 
     return app.exec();

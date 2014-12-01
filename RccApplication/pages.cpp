@@ -32,43 +32,56 @@ News::News(QWidget *parent)
 Forums::Forums(QWidget *parent)
     : QWidget(parent)
 {
-    /*
-    QGroupBox *updateGroup = new QGroupBox(tr("Package selection"));
-    QCheckBox *systemCheckBox = new QCheckBox(tr("Update system"));
-    QCheckBox *appsCheckBox = new QCheckBox(tr("Update applications"));
-    QCheckBox *docsCheckBox = new QCheckBox(tr("Update documentation"));
 
-    QGroupBox *packageGroup = new QGroupBox(tr("Existing packages"));
+    threadType->addItem("Link");
+    threadType->addItem("Text");
 
-    QListWidget *packageList = new QListWidget;
-    QListWidgetItem *qtItem = new QListWidgetItem(packageList);
-    qtItem->setText(tr("Qt"));
-    QListWidgetItem *qsaItem = new QListWidgetItem(packageList);
-    qsaItem->setText(tr("QSA"));
-    QListWidgetItem *teamBuilderItem = new QListWidgetItem(packageList);
-    teamBuilderItem->setText(tr("Teambuilder"));
 
-    QPushButton *startUpdateButton = new QPushButton(tr("Start update"));
+    forumButton->addWidget(threadType);
+    forumButton->addWidget(title);
+    forumButton->addWidget(titleInput);
+    forumButton->addWidget(urlLabel);
+    forumButton->addWidget(urlInput);
+    forumButton->addWidget(text);
+    text->hide();
+    forumButton->addWidget(choose);
+    forumButton->addWidget(sub);
 
-    QVBoxLayout *updateLayout = new QVBoxLayout;
-    updateLayout->addWidget(systemCheckBox);
-    updateLayout->addWidget(appsCheckBox);
-    updateLayout->addWidget(docsCheckBox);
-    updateGroup->setLayout(updateLayout);
-
-    QVBoxLayout *packageLayout = new QVBoxLayout;
-    packageLayout->addWidget(packageList);
-    packageGroup->setLayout(packageLayout);
+    forums->setLayout(forumButton);
 
     QVBoxLayout *mainLayout = new QVBoxLayout;
-    mainLayout->addWidget(updateGroup);
-    mainLayout->addWidget(packageGroup);
+    mainLayout->addWidget(forums);
     mainLayout->addSpacing(12);
-    mainLayout->addWidget(startUpdateButton);
     mainLayout->addStretch(1);
     setLayout(mainLayout);
-    */
 
+}
+void Forums::on_threadType_activated(const QString &arg1){
+
+    if(threadType->currentText()=="Link"){
+        urlInput->show();
+        urlLabel->setText("Url");
+        text->hide();
+    }
+    else if(threadType->currentText()=="Text"){
+        urlInput->hide();
+        urlLabel->setText("Url");
+        text->show();
+    }
+
+
+    /*
+      if(ui->selectType->currentText()=="Link"){
+        ui->urlInput->show();
+        ui->typeLabel->setText("URL");
+        ui->textInput->hide();
+    }
+    else if(ui->selectType->currentText()=="Text"){
+        ui->urlInput->hide();
+        ui->typeLabel->setText("Text");
+        ui->textInput->show();
+    }
+    */
 }
 
 Schedule::Schedule(QWidget *parent)
