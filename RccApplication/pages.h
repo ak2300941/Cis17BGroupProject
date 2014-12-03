@@ -51,18 +51,21 @@ public:
 
 class Forums : public QWidget
 {
+
 public:
     Forums(QWidget *parent = 0);
 
-private slots:
 
-    void on_threadType_activated(const QString &arg1);
+public slots:
+
+
 
 private:
 
     QLabel *title = new QLabel("Title ");
     QLabel *urlLabel = new QLabel("Url");
     QLabel *choose = new QLabel("Choose a sub-forum");
+    QPushButton *submit = new QPushButton("Submit");
     QGroupBox *forums = new QGroupBox();
 
 

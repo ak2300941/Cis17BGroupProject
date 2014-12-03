@@ -16,10 +16,10 @@ int main(int argc, char *argv[])
    // Globals globals;
     //Uncomment this stuff, then recomment
     //ConfigDialog
-    //LoginPage w;
-   // w.show();
-    ConfigDialog *k = new ConfigDialog;
-    k->show();
+      LoginPage w;
+      w.show();
+   // ConfigDialog *k = new ConfigDialog;
+    //k->show();
 
 
 

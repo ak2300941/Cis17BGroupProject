@@ -90,6 +90,8 @@ ConfigDialog::ConfigDialog()
     setLayout(mainLayout);
 
     setWindowTitle(tr("Config Dialog"));
+
+
 }
 
 void ConfigDialog::createIcons()

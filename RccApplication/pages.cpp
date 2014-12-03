@@ -33,6 +33,8 @@ Forums::Forums(QWidget *parent)
     : QWidget(parent)
 {
 
+
+
     threadType->addItem("Link");
     threadType->addItem("Text");
 
@@ -43,46 +45,21 @@ Forums::Forums(QWidget *parent)
     forumButton->addWidget(urlLabel);
     forumButton->addWidget(urlInput);
     forumButton->addWidget(text);
-    text->hide();
     forumButton->addWidget(choose);
     forumButton->addWidget(sub);
+    forumButton->addWidget(submit);
 
     forums->setLayout(forumButton);
 
     QVBoxLayout *mainLayout = new QVBoxLayout;
     mainLayout->addWidget(forums);
     mainLayout->addSpacing(12);
+
     mainLayout->addStretch(1);
     setLayout(mainLayout);
 
 }
-void Forums::on_threadType_activated(const QString &arg1){
 
-    if(threadType->currentText()=="Link"){
-        urlInput->show();
-        urlLabel->setText("Url");
-        text->hide();
-    }
-    else if(threadType->currentText()=="Text"){
-        urlInput->hide();
-        urlLabel->setText("Url");
-        text->show();
-    }
-
-
-    /*
-      if(ui->selectType->currentText()=="Link"){
-        ui->urlInput->show();
-        ui->typeLabel->setText("URL");
-        ui->textInput->hide();
-    }
-    else if(ui->selectType->currentText()=="Text"){
-        ui->urlInput->hide();
-        ui->typeLabel->setText("Text");
-        ui->textInput->show();
-    }
-    */
-}
 
 Schedule::Schedule(QWidget *parent)
     : QWidget(parent)
