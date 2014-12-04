@@ -32,7 +32,22 @@ News::News(QWidget *parent)
 Forums::Forums(QWidget *parent)
     : QWidget(parent)
 {
+    QLabel *title = new QLabel("Title ");
+    QLabel *urlLabel = new QLabel("Url");
+    QLabel *choose = new QLabel("Choose a sub-forum");
+    QPushButton *submit = new QPushButton("Submit");
+    QGroupBox *forums = new QGroupBox();
 
+
+
+    QComboBox *threadType = new QComboBox;
+    QLineEdit *titleInput = new QLineEdit;
+    QLineEdit *urlInput = new QLineEdit;
+    QTextEdit *text = new QTextEdit;
+    QLineEdit *sub = new QLineEdit;
+
+
+    QGridLayout *forumButton = new QGridLayout;
 
 
     threadType->addItem("Link");

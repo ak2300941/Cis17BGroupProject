@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
       LoginPage w;
       w.show();
    // ConfigDialog *k = new ConfigDialog;
-    //k->show();
+   //k->show();
 
 
 

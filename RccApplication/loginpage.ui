@@ -26,20 +26,33 @@
    <string>LoginPage</string>
   </property>
   <property name="autoFillBackground">
-   <bool>false</bool>
+   <bool>true</bool>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">font: 12pt &quot;Segoe UI&quot;;</string>
   </property>
   <widget class="QWidget" name="centralWidget">
+   <property name="styleSheet">
+    <string notr="true">background:url(./tigerbg.png);
+background-repeat: no-repeat;
+background-color:rgb(36, 36, 36);</string>
+   </property>
    <widget class="QLineEdit" name="Email">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>80</y>
-      <width>113</width>
-      <height>20</height>
+      <x>80</x>
+      <y>120</y>
+      <width>241</width>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::ClickFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid rgb(255, 255, 255);
+background:rgb(255, 255, 255);
+</string>
     </property>
     <property name="maxLength">
      <number>30</number>
@@ -54,11 +67,19 @@
    <widget class="QLineEdit" name="Password">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>120</y>
-      <width>113</width>
-      <height>20</height>
+      <x>80</x>
+      <y>160</y>
+      <width>241</width>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::ClickFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid rgb(255, 255, 255);
+background:rgb(255, 255, 255);
+</string>
     </property>
     <property name="maxLength">
      <number>16</number>
@@ -76,11 +97,21 @@
    <widget class="QPushButton" name="Login">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>160</y>
-      <width>75</width>
-      <height>23</height>
+      <x>80</x>
+      <y>200</y>
+      <width>111</width>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::ClickFocus</enum>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:white;
+</string>
     </property>
     <property name="text">
      <string>Login</string>
@@ -89,46 +120,21 @@
    <widget class="QPushButton" name="CreateAcc">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>160</y>
-      <width>91</width>
-      <height>23</height>
+      <x>200</x>
+      <y>200</y>
+      <width>121</width>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:white;
+</string>
     </property>
     <property name="text">
      <string>Create Account</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="emailLabel">
-    <property name="geometry">
-     <rect>
-      <x>80</x>
-      <y>80</y>
-      <width>46</width>
-      <height>13</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Email:</string>
-    </property>
-    <property name="buddy">
-     <cstring>Email</cstring>
-    </property>
-   </widget>
-   <widget class="QLabel" name="passLabel">
-    <property name="geometry">
-     <rect>
-      <x>80</x>
-      <y>120</y>
-      <width>46</width>
-      <height>13</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Password:</string>
-    </property>
-    <property name="buddy">
-     <cstring>Password</cstring>
     </property>
    </widget>
   </widget>
@@ -138,10 +144,24 @@
      <x>0</x>
      <y>0</y>
      <width>400</width>
-     <height>21</height>
+     <height>27</height>
     </rect>
    </property>
+   <property name="autoFillBackground">
+    <bool>true</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgb(255, 137, 41);</string>
+   </property>
    <widget class="QMenu" name="menuHelp">
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgb(255, 137, 41);
+border:0px;
+</string>
+    </property>
     <property name="title">
      <string>Help</string>
     </property>

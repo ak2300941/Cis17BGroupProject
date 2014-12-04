@@ -15,7 +15,7 @@
 #include "globals.h"
 
 LoginPage::LoginPage(QWidget *parent) :
-    QMainWindow(parent),
+    QMainWindow(parent, Qt::FramelessWindowHint | Qt::WindowSystemMenuHint),
     ui(new Ui::LoginPage)
 {
     ui->setupUi(this);
