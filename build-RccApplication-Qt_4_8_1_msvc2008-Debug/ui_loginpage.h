@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'loginpage.ui'
 **
-** Created: Wed Dec 3 19:53:13 2014
+** Created: Wed Dec 3 20:04:46 2014
 **      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -84,11 +84,29 @@ public:
         LoginPage->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(LoginPage);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 400, 27));
-        menuBar->setAutoFillBackground(true);
-        menuBar->setStyleSheet(QString::fromUtf8("background:rgb(255, 137, 41);"));
+        menuBar->setGeometry(QRect(0, 0, 400, 24));
+        menuBar->setLayoutDirection(Qt::RightToLeft);
+        menuBar->setAutoFillBackground(false);
+        menuBar->setStyleSheet(QString::fromUtf8("/*background:rgb(255, 137, 41);*/\n"
+"QMenuBar::item {\n"
+"    spacing: 3px; /* spacing between menu bar items */\n"
+"    padding: 1px 4px;\n"
+"    background: transparent;\n"
+"    border-radius: 4px;\n"
+"}\n"
+"QMenuBar {\n"
+"    background-color: rgb(255, 137, 41);\n"
+"}"));
         menuHelp = new QMenu(menuBar);
         menuHelp->setObjectName(QString::fromUtf8("menuHelp"));
+        QFont font;
+        font.setFamily(QString::fromUtf8("Segoe UI"));
+        font.setPointSize(12);
+        font.setBold(false);
+        font.setItalic(false);
+        font.setWeight(50);
+        menuHelp->setFont(font);
+        menuHelp->setLayoutDirection(Qt::LeftToRight);
         menuHelp->setAutoFillBackground(false);
         menuHelp->setStyleSheet(QString::fromUtf8("background:rgb(255, 137, 41);\n"
 "border:0px;\n"
@@ -112,7 +130,7 @@ public:
         Password->setPlaceholderText(QApplication::translate("LoginPage", "Password", 0, QApplication::UnicodeUTF8));
         Login->setText(QApplication::translate("LoginPage", "Login", 0, QApplication::UnicodeUTF8));
         CreateAcc->setText(QApplication::translate("LoginPage", "Create Account", 0, QApplication::UnicodeUTF8));
-        menuHelp->setTitle(QApplication::translate("LoginPage", "Help", 0, QApplication::UnicodeUTF8));
+        menuHelp->setTitle(QApplication::translate("LoginPage", "X ", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };
