@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<News>
+  <Articles>
+    <path>:/NewsArticles/article1</path>
+    <path>:/NewsArticles/article2</path>
+    <path>:/NewsArticles/article3</path>
+  </Articles>
+  <Images>
+    <path>:/Images/ArticleImage1</path>
+    <path>:/Images/ArticleImage2</path>
+    <path>:/Images/ArticleImage3</path>
+  </Images>
+</News>

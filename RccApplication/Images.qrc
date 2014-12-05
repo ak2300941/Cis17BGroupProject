@@ -1,6 +1,18 @@
 <RCC>
     <qresource prefix="/">
-        <file>rccTigerEdited.png</file>
+        <file>Images/About.png</file>
+        <file>Images/Appointments.png</file>
+        <file>Images/Bus.png</file>
+        <file>Images/Clubs.png</file>
+        <file>Images/Forums.png</file>
+        <file>Images/Gaben.png</file>
+        <file>Images/News.png</file>
+        <file>Images/Schedule.png</file>
+        <file>Images/SchoolInfo.png</file>
+        <file>Images/SplashScreen.png</file>
+        <file>Images/ArticleImage1.jpg</file>
+        <file>Images/ArticleImage2.jpg</file>
+        <file>Images/ArticleImage3.jpg</file>
     </qresource>
     <qresource prefix="/news">
         <file>newsHeader.ini</file>

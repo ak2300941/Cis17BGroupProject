@@ -2,7 +2,8 @@
 #define LOGINPAGE_H
 
 #include <QMainWindow>
-#include "configdialog.h"
+#include <QGraphicsScene>
+#include "homescreen.h"
 
 namespace Ui {
 class LoginPage;
@@ -21,6 +22,10 @@ private slots:
 
     void on_CreateAcc_clicked();
 
+    void on_X_clicked();
+
+    void on___clicked();
+
 private:
     Ui::LoginPage *ui;
 
@@ -29,6 +34,8 @@ private:
     QString email,password;
 
     bool checke, checkp;
+
+    QGraphicsScene *scene;
 };
 
 #endif // LOGINPAGE_H

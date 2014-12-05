@@ -6,20 +6,19 @@
 #include <QLabel>
 #include <QtDebug>
 #include "homescreen.h"
-#include "configdialog.h"
 #include "io.h"
 #include "globals.h"
 
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
-   // Globals globals;
+    //Globals globals;
     //Uncomment this stuff, then recomment
     //ConfigDialog
-      LoginPage w;
-      w.show();
-   // ConfigDialog *k = new ConfigDialog;
-   //k->show();
+    LoginPage w;
+    w.show();
+    //HomeScreen *k = new HomeScreen;
+    //k->show();
 
 
 

@@ -8,6 +8,7 @@
 #include <QMessageBox>
 #include <QFile>
 #include <QTextStream>
+#include <QPushButton>
 #include <QCryptographicHash>
 #include "sha1.h"
 #include "io.h"
@@ -26,6 +27,15 @@ LoginPage::LoginPage(QWidget *parent) :
 
     checke = 0;
     checkp = 0;
+    QColor color(255,102,0,255);
+    QBrush background(color);
+    scene = new QGraphicsScene(ui->graphicsView);
+    ui->graphicsView->setScene(scene);
+    ui->graphicsView->setBackgroundBrush(background);
+    QPushButton close;
+    close.setText("X");
+    close.setFlat(true);
+    //scene->addWidget(close);
 
 }
 
@@ -107,7 +117,7 @@ void LoginPage::splashInit() {
          * Show the Splash Image *
          *         David S.      *
          * **********************/
-        QPixmap image( ":/rccTigerEdited.png" );
+        QPixmap image( ":/Images/SplashScreen.png" );
         QLabel* aWidget = new QLabel( 0, Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint );
         aWidget->setAttribute( Qt::WA_TranslucentBackground );
         aWidget->setPixmap( image );
@@ -121,7 +131,7 @@ void LoginPage::splashInit() {
         aWidget->move( ( mainScreenSize.width() / 2 ) - ( width / 2 ), ( mainScreenSize.height() / 2  - ( height / 2 ) ) );
         aWidget->show();
 
-        ConfigDialog *dialog = new ConfigDialog;
+        HomeScreen *dialog = new HomeScreen;
 
         /********************************************************************
          * after a set amount of time close splash image and open main menu *
@@ -184,3 +194,13 @@ animation->start();
 */
 
 
+
+void LoginPage::on_X_clicked()
+{
+    this->close();
+}
+
+void LoginPage::on___clicked()
+{
+    this->setWindowState(Qt::WindowMinimized);
+}

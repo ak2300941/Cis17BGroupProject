@@ -38,32 +38,130 @@
 **
 ****************************************************************************/
 
-#ifndef CONFIGDIALOG_H
-#define CONFIGDIALOG_H
+#ifndef HomeScreenPages_H
+#define HomeScreenPages_H
 
-#include <QDialog>
+#include <QWidget>
+#include <QImage>
+#include <QLabel>
+#include <QPushButton>
+#include <QLineEdit>
+#include <QGroupBox>
+#include <QTextEdit>
+#include <QComboBox>
+#include <QGridLayout>
+#include <QGraphicsView>
+#include <QGraphicsScene>
+#include <QDomDocument>
+#include <QDomElement>
+#include <QListWidget>
 
-QT_BEGIN_NAMESPACE
-class QListWidget;
-class QListWidgetItem;
-class QStackedWidget;
-QT_END_NAMESPACE
 
-class ConfigDialog : public QDialog
+#include "ui_NewsPage.h"
+#include "ui_about.h"
+#include "ui_Appointments.h"
+#include "ui_busSchedule.h"
+#include "ui_clubs.h"
+#include "ui_Forums.h"
+#include "ui_schedule.h"
+#include "ui_schoolInfo.h"
+
+
+
+class NewsPage : public QWidget
 {
+
     Q_OBJECT
-
 public:
-    ConfigDialog();
+    NewsPage(QWidget *parent = 0);
+private:
+    Ui::NewsPage *ui;
+    QGraphicsScene *scene;
+    //QListWidget *contentsWidget;
 
-public slots:
-    void changePage(QListWidgetItem *current, QListWidgetItem *previous);
+};
+
+
+class Forums : public QWidget
+{
+
+    Q_OBJECT
+public:
+    Forums(QWidget *parent = 0);
 
 private:
-    void createIcons();
+    Ui::Forums *ui;
 
-    QListWidget *contentsWidget;
-    QStackedWidget *pagesWidget;
 };
+
+
+class  Schedule : public QWidget
+{
+
+    Q_OBJECT
+public:
+    Schedule(QWidget *parent = 0);
+private:
+    Ui::schedule *ui;
+
+};
+
+class Clubs : public QWidget
+{
+    Q_OBJECT
+public:
+    Clubs(QWidget *parent = 0);
+private:
+    Ui::Clubs *ui;
+
+};
+
+
+class  SchoolInfo : public QWidget
+{
+
+    Q_OBJECT
+public:
+    SchoolInfo(QWidget *parent = 0);
+private:
+    Ui::schoolInfo *ui;
+
+};
+
+
+class  Appointments : public QWidget
+{
+
+    Q_OBJECT
+public:
+    Appointments(QWidget *parent = 0);
+private:
+    Ui::appointments *ui;
+
+};
+
+
+class  BusSchedule : public QWidget
+{
+
+    Q_OBJECT
+public:
+    BusSchedule(QWidget *parent = 0);
+private:
+    Ui::BusSchedule *ui;
+
+};
+
+
+class  About : public QWidget
+{
+    Q_OBJECT
+public:
+    About(QWidget *parent = 0);
+private:
+    Ui::About *ui;
+};
+
+
 
 #endif

@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui sql
+QT       +=xml
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -14,34 +15,44 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         loginpage.cpp \
-    csplashscreen.cpp \
-    homescreen.cpp \
     sha1.cpp \
-    pages.cpp \
-    configdialog.cpp \
     settings.cpp \
     io.cpp \
     database.cpp \
     createaccount.cpp \
     user.cpp \
-    globals.cpp
+    globals.cpp \
+    homescreen.cpp \
+    homescreenpages.cpp
 
 HEADERS  += loginpage.h \
-    csplashscreen.h \
-    homescreen.h \
     sha1.h \
-    pages.h \
-    configdialog.h \
     setting.h \
     io.h \
     database.h \
     createaccount.h \
     user.h \
-    globals.h
+    globals.h \
+    homescreen.h \
+    homescreenpages.h
 
 FORMS    += loginpage.ui \
-    homescreen.ui \
-    createaccount.ui
+    createaccount.ui \
+    NewsPage.ui \
+    Forums.ui \
+    schedule.ui \
+    schoolInfo.ui \
+    Appointments.ui \
+    busSchedule.ui \
+    about.ui \
+    clubs.ui
 
 RESOURCES += \
-    Images.qrc
+    Images.qrc \
+    xml.qrc
+
+QMAKE_CXXFLAGS_WARN_OFF -= -Wunused-parameter
+
+OTHER_FILES += \
+    article2.txt \
+    article3.txt

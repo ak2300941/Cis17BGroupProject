@@ -137,60 +137,69 @@ background:rgb(255, 255, 255);
      <string>Create Account</string>
     </property>
    </widget>
-  </widget>
-  <widget class="QMenuBar" name="menuBar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>400</width>
-     <height>24</height>
-    </rect>
-   </property>
-   <property name="layoutDirection">
-    <enum>Qt::RightToLeft</enum>
-   </property>
-   <property name="autoFillBackground">
-    <bool>false</bool>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">/*background:rgb(255, 137, 41);*/
-QMenuBar::item {
-    spacing: 3px; /* spacing between menu bar items */
-    padding: 1px 4px;
-    background: transparent;
-    border-radius: 4px;
-}
-QMenuBar {
-    background-color: rgb(255, 137, 41);
-}</string>
-   </property>
-   <widget class="QMenu" name="menuHelp">
-    <property name="font">
-     <font>
-      <family>Segoe UI</family>
-      <pointsize>12</pointsize>
-      <weight>50</weight>
-      <italic>false</italic>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="layoutDirection">
-     <enum>Qt::LeftToRight</enum>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
+   <widget class="QGraphicsView" name="graphicsView">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>400</width>
+      <height>30</height>
+     </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background:rgb(255, 137, 41);
-border:0px;
-</string>
+     <string notr="true"/>
     </property>
-    <property name="title">
-     <string>X </string>
+    <property name="backgroundBrush">
+     <brush brushstyle="NoBrush">
+      <color alpha="255">
+       <red>255</red>
+       <green>170</green>
+       <blue>0</blue>
+      </color>
+     </brush>
+    </property>
+    <property name="foregroundBrush">
+     <brush brushstyle="NoBrush">
+      <color alpha="255">
+       <red>255</red>
+       <green>170</green>
+       <blue>0</blue>
+      </color>
+     </brush>
     </property>
    </widget>
-   <addaction name="menuHelp"/>
+   <widget class="QPushButton" name="X">
+    <property name="geometry">
+     <rect>
+      <x>364</x>
+      <y>2</y>
+      <width>31</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>X</string>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="_">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>2</y>
+      <width>31</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>__</string>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
