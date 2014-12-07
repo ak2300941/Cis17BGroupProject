@@ -7,10 +7,27 @@ NewsPage::NewsPage(QWidget *parent) :
     QWidget (parent),
     ui(new Ui::NewsPage)
 {
+
+
     ui->setupUi(this);
-    this->setFixedSize(1024,768);
+    //this->setFixedSize(1024,768);
+
+    //Mouse Tracking
+    this->setMouseTracking(true);
+    //ui->centralWidget->setMouseTracking(true);
+
+    QPixmap pixmap(":Images/ArticleImage1.jpg");
+    QPixmap pixmap2(":Images/ArticleImage3.jpg");
 
 
+    QIcon ButtonIcon(pixmap);
+    QIcon ButtonIcon2(pixmap2);
+    ui->article1_Picture_2->setIcon(ButtonIcon);
+    ui->article1_Picture_2->setIconSize(pixmap.rect().size());
+    ui->article1_Picture_3->setIcon(ButtonIcon2);
+    ui->article1_Picture_3->setIconSize(pixmap2.rect().size());
+
+    /*
     QDomDocument xml;
     QFile xmlFile(":/newsArticles.xml");
     xml.setContent(&xmlFile);
@@ -66,7 +83,7 @@ NewsPage::NewsPage(QWidget *parent) :
         else if(i==3)
             test->translate(0-width/2,c);
         files[i].close();
-        */
+
     }
     //contentsWidget = new QListWidget;
     ui->listWidget->setViewMode(QListView::IconMode);
@@ -138,8 +155,21 @@ NewsPage::NewsPage(QWidget *parent) :
     QGraphicsWidget *form = new QGraphicsWidget;
     form->setLayout(layout);
     scene.addItem(form);
-    */
+
     xmlFile.close();
+*/
+}
+
+void NewsPage::on_article1_Picture_2_clicked(){
+
+    QString link ="http://www.rcc.edu/about/campusnews/Pages/Taube-to-be-Featured-Speaker-at-Xipe-Projects-.aspx";
+    QDesktopServices::openUrl(QUrl(link));
+
+}
+void NewsPage::on_article1_Picture_3_clicked(){
+
+    QString link ="http://www.rcc.edu/about/campusnews/Pages/Journalism-Students-Win-Eight-Awards-at-Southern-California-Competition.aspx";
+    QDesktopServices::openUrl(QUrl(link));
 
 }
 
