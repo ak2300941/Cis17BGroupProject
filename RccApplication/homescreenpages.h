@@ -78,7 +78,9 @@ private:
     Ui::NewsPage *ui;
     QGraphicsScene *scene;
     //QListWidget *contentsWidget;
-
+    QDomNodeList artLinks;
+private slots:
+    void itemClicked( QListWidgetItem* );
 };
 
 

@@ -25,6 +25,7 @@ NewsPage::NewsPage(QWidget *parent) :
     QDomElement root = xml.firstChildElement();
     QDomNodeList articlePath = root.elementsByTagName("Articles").at(0).childNodes();//.at(0).firstChildElement().text();
     QDomNodeList imagePath = root.elementsByTagName("Images").at(0).childNodes();
+    QDomNodeList artLinks = root.elementsByTagName("Links").at(0).childNodes();
     QPixmap *pix = new QPixmap[imagePath.size()];
     QFile *files = new QFile[articlePath.size()];
     QLabel *labels = new QLabel[articlePath.size()];
@@ -80,18 +81,23 @@ NewsPage::NewsPage(QWidget *parent) :
     Art1->setText(tr("Article 1"));
     Art1->setTextAlignment(Qt::AlignHCenter);
     Art1->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+    Art1->setData( 5, QVariant( artLinks.at(0).toElement().text() ));
 
     QListWidgetItem *Art2 = new QListWidgetItem(ui->listWidget);
     Art2->setIcon(QIcon(imagePath.at(1).toElement().text()));
     Art2->setText(tr("Article 2"));
     Art2->setTextAlignment(Qt::AlignHCenter);
     Art2->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+    Art2->setData( 5, QVariant( artLinks.at(1).toElement().text() ));
 
     QListWidgetItem *Art3 = new QListWidgetItem(ui->listWidget);
     Art3->setIcon(QIcon(imagePath.at(2).toElement().text()));
     Art3->setText(tr("Article 3"));
     Art3->setTextAlignment(Qt::AlignHCenter);
     Art3->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+    Art3->setData( 5, QVariant( artLinks.at(2).toElement().text() ));
+
+    connect( ui->listWidget, SIGNAL( itemClicked(QListWidgetItem*) ), this, SLOT( itemClicked( QListWidgetItem* ) ) );
 
 
     /*
@@ -140,7 +146,10 @@ NewsPage::NewsPage(QWidget *parent) :
     scene.addItem(form);
     */
     xmlFile.close();
+}
 
+void NewsPage::itemClicked( QListWidgetItem* item ){
+    QDesktopServices::openUrl( item->data( 5 ).toString() );
 }
 
 
