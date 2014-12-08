@@ -176,7 +176,7 @@ void NewsPage::on_article1_Picture_3_clicked(){
 
     QString link ="http://www.rcc.edu/about/campusnews/Pages/Journalism-Students-Win-Eight-Awards-at-Southern-California-Competition.aspx";
     QDesktopServices::openUrl(QUrl(link));
-
+}
 void NewsPage::itemClicked( QListWidgetItem* item ){
     QDesktopServices::openUrl( item->data( 5 ).toString() );
 }
