@@ -74,6 +74,13 @@ class NewsPage : public QWidget
     Q_OBJECT
 public:
     NewsPage(QWidget *parent = 0);
+private slots:
+    void on_article1_Picture_2_clicked();
+
+
+
+    void on_article1_Picture_3_clicked();
+
 private:
     Ui::NewsPage *ui;
     QGraphicsScene *scene;

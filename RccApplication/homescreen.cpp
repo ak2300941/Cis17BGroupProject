@@ -93,6 +93,8 @@ HomeScreen::HomeScreen()
     setWindowTitle(tr("Config Dialog"));
 
 
+
+
 }
 
 void HomeScreen::createIcons()
