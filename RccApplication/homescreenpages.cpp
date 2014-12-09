@@ -237,6 +237,32 @@ Schedule::Schedule(QWidget *parent)
 {
     ui->setupUi(this);
     this->setFixedSize(1024,768);
+    //Read in Class file
+    QFile classFile("class.txt");
+    classFile.open(QIODevice::ReadOnly);
+    QTextStream textStream(&classFile);
+    QString line;
+    while(!textStream.atEnd())
+    {
+        line=textStream.readLine();
+        ui->classList->addItem(line);
+    }
+    classFile.close();
+    //Label for student
+    ui->studentLabel->setText(Globals::getSessionEmail());
+    //Read if Student File is there
+    QString name1 = Globals::getSessionEmail();
+    QString name2 = ".txt";
+    QFile myFile(name1+name2);
+    myFile.open(QIODevice::ReadOnly);
+    QTextStream stream(&myFile);
+    while(!stream.atEnd())
+    {
+        line=stream.readLine();
+        ui->studentList->addItem(line);
+    }
+    myFile.close();
+
     /*
     ui->setupUi(this);
     QGroupBox *packagesGroup = new QGroupBox(tr("Look for packages"));
@@ -278,6 +304,51 @@ Schedule::Schedule(QWidget *parent)
     setLayout(mainLayout);
     */
 }
+
+//Add Class
+void Schedule::on_leftButton_clicked()
+{
+    moveCurrentItem(ui->classList,ui->studentList);
+}
+
+//Remove Class
+void Schedule::on_rightButton_clicked()
+{
+    // moveCurrentItem(ui->studentList,ui->classList);
+    delete ui->studentList->currentItem();
+}
+
+void Schedule::on_saveButton_clicked()
+{
+    QString line;
+    //Write to file
+    QString name1 = Globals::getSessionEmail();
+    QString name2 = ".txt";
+    QFile myFile(name1+name2);
+    myFile.open(QFile::WriteOnly|QFile::Text);
+    QTextStream out(&myFile);
+    //Count the numbers of classes listed
+    int index = ui->studentList->count();
+    //Write into file
+    for(int i=0;i<index;i++)
+    {
+        line = ui->studentList->item(i)->text();
+        out<<line<<endl;
+    }
+    myFile.close();
+}
+
+void Schedule::moveCurrentItem(QListWidget *source, QListWidget *target)
+{
+    if (source->currentItem())
+    {
+        QListWidgetItem *newItem = source->currentItem()->clone();
+        target->addItem(newItem);
+        target->setCurrentItem(newItem);
+        delete source->currentItem();
+    }
+}
+
 Clubs::Clubs(QWidget *parent)
     : QWidget(parent),
       ui(new Ui::Clubs)

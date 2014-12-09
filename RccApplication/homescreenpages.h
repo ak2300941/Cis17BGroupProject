@@ -55,6 +55,8 @@
 #include <QDomDocument>
 #include <QDomElement>
 #include <QListWidget>
+#include <QtGui>
+#include <QDialog>
 
 
 #include "ui_NewsPage.h"
@@ -65,6 +67,7 @@
 #include "ui_Forums.h"
 #include "ui_schedule.h"
 #include "ui_schoolInfo.h"
+#include "globals.h"
 
 
 
@@ -110,8 +113,14 @@ class  Schedule : public QWidget
     Q_OBJECT
 public:
     Schedule(QWidget *parent = 0);
+private slots:
+    void on_leftButton_clicked();
+    void on_rightButton_clicked();
+    void on_saveButton_clicked();
+
 private:
     Ui::schedule *ui;
+    void moveCurrentItem(QListWidget *source,QListWidget *target);
 
 };
 
