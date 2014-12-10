@@ -67,7 +67,9 @@
 #include "ui_Forums.h"
 #include "ui_schedule.h"
 #include "ui_schoolInfo.h"
+#include "ui_Map.h"
 #include "globals.h"
+#include "subforum.h"
 
 
 
@@ -100,9 +102,15 @@ class Forums : public QWidget
     Q_OBJECT
 public:
     Forums(QWidget *parent = 0);
+    void createIcons();
+
+public slots:
+    void changePage(QListWidgetItem *current, QListWidgetItem *previous);
 
 private:
     Ui::Forums *ui;
+    QListWidget *contentsWidget;
+    QStackedWidget *a;
 
 };
 
@@ -134,7 +142,7 @@ private:
 
 };
 
-
+/*
 class  SchoolInfo : public QWidget
 {
 
@@ -145,6 +153,7 @@ private:
     Ui::schoolInfo *ui;
 
 };
+*/
 
 
 class  Appointments : public QWidget
@@ -179,6 +188,16 @@ public:
 private:
     Ui::About *ui;
 };
+
+class  Map : public QWidget
+{
+    Q_OBJECT
+public:
+    Map(QWidget *parent = 0);
+private:
+    Ui::Map *ui;
+};
+
 
 
 

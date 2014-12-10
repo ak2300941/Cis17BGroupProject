@@ -68,7 +68,6 @@ NewsPage::NewsPage(QWidget *parent) :
         //qDebug() << (tempFile.readAll());
         //width = pix[i].width();
         //height = pix[i].height();
-        /*
         if(i==1)
             scene->setSceneRect((0-width/2),a,0,0);
         else if(i==2)
@@ -117,7 +116,6 @@ NewsPage::NewsPage(QWidget *parent) :
     connect( ui->listWidget, SIGNAL( itemClicked(QListWidgetItem*) ), this, SLOT( itemClicked( QListWidgetItem* ) ) );
 
 
-    /*
     QGroupBox *configGroup = new QGroupBox(tr("Server configuration"));
 
     QLabel *serverLabel = new QLabel(tr("Server:"));
@@ -187,47 +185,235 @@ Forums::Forums(QWidget *parent) :
     ui(new Ui::Forums)
 {
     ui->setupUi(this);
+
     this->setFixedSize(1024,768);
-    QLabel *title = new QLabel("Title ");
-    QLabel *urlLabel = new QLabel("Url");
-    QLabel *choose = new QLabel("Choose a sub-forum");
-    QPushButton *submit = new QPushButton("Submit");
-    QGroupBox *forums = new QGroupBox();
+
+    contentsWidget = new QListWidget;
+    contentsWidget->setViewMode(QListView::IconMode);
+    contentsWidget->setIconSize(QSize(100, 100));
+    contentsWidget->setMovement(QListView::Static);
+    contentsWidget->setMaximumWidth(145);
+    contentsWidget->setMinimumWidth(145);
+    contentsWidget->setSpacing(12);
+
+    a = new QStackedWidget;
+    a->addWidget(new SubForum("A"));//A
+    a->addWidget(new SubForum("B"));//B
+    a->addWidget(new SubForum("C"));//C
+    a->addWidget(new SubForum("D"));//D
+    a->addWidget(new SubForum("E"));//E
+    a->addWidget(new SubForum("F"));//F
+    a->addWidget(new SubForum("G"));//G
+    a->addWidget(new SubForum("H"));//H
+    a->addWidget(new SubForum("I"));//I
+    a->addWidget(new SubForum("J"));//J
+    a->addWidget(new SubForum("K"));//K
+    a->addWidget(new SubForum("L"));//L
+    a->addWidget(new SubForum("M"));//M
+    a->addWidget(new SubForum("N"));//N
+    a->addWidget(new SubForum("O"));//O
+    a->addWidget(new SubForum("P"));//P
+    a->addWidget(new SubForum("Q"));//Q
+    a->addWidget(new SubForum("R"));//R
+    a->addWidget(new SubForum("S"));//S
+    a->addWidget(new SubForum("T"));//T
+    a->addWidget(new SubForum("U"));//U
+    a->addWidget(new SubForum("V"));//V
+    a->addWidget(new SubForum("W"));//W
+    a->addWidget(new SubForum("X"));//X
+    a->addWidget(new SubForum("Y"));//Y
+    a->addWidget(new SubForum("Z"));//Z
+    a->setFixedWidth(1024);
+    a->setFixedHeight(768);
 
 
 
-    QComboBox *threadType = new QComboBox;
-    QLineEdit *titleInput = new QLineEdit;
-    QLineEdit *urlInput = new QLineEdit;
-    QTextEdit *text = new QTextEdit;
-    QLineEdit *sub = new QLineEdit;
+    createIcons();
+    contentsWidget->setCurrentRow(0);
 
-
-    QGridLayout *forumButton = new QGridLayout;
-
-    threadType->addItem("Link");
-    threadType->addItem("Text");
-
-
-    forumButton->addWidget(threadType);
-    forumButton->addWidget(title);
-    forumButton->addWidget(titleInput);
-    forumButton->addWidget(urlLabel);
-    forumButton->addWidget(urlInput);
-    forumButton->addWidget(text);
-    forumButton->addWidget(choose);
-    forumButton->addWidget(sub);
-    forumButton->addWidget(submit);
-
-    forums->setLayout(forumButton);
+    QHBoxLayout *horizontalLayout = new QHBoxLayout;
+    horizontalLayout->addWidget(contentsWidget);
+    horizontalLayout->addWidget(a, 1);
 
     QVBoxLayout *mainLayout = new QVBoxLayout;
-    mainLayout->addWidget(forums);
-    mainLayout->addSpacing(12);
-
+    mainLayout->addLayout(horizontalLayout);
     mainLayout->addStretch(1);
+    mainLayout->addSpacing(12);
     setLayout(mainLayout);
 
+}
+
+void Forums::createIcons()
+{
+
+    QListWidgetItem *A = new QListWidgetItem(contentsWidget);
+    A->setIcon(QIcon(":/Images/A.png"));
+    A->setText(tr("A"));
+    A->setTextAlignment(Qt::AlignHCenter);
+    A->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+
+    QListWidgetItem *B = new QListWidgetItem(contentsWidget);
+    B->setIcon(QIcon(":/Images/B.png"));
+    B->setText(tr("B"));
+    B->setTextAlignment(Qt::AlignHCenter);
+    B->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+
+    QListWidgetItem *C = new QListWidgetItem(contentsWidget);
+    C->setIcon(QIcon(":/Images/C.png"));
+    C->setText(tr("C"));
+    C->setTextAlignment(Qt::AlignHCenter);
+    C->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+
+    QListWidgetItem *D = new QListWidgetItem(contentsWidget);
+    D->setIcon(QIcon(":/Images/D.png"));
+    D->setText(tr("D"));
+    D->setTextAlignment(Qt::AlignHCenter);
+    D->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+
+    QListWidgetItem *E = new QListWidgetItem(contentsWidget);
+    E->setIcon(QIcon(":/Images/E.png"));
+    E->setText(tr("E"));
+    E->setTextAlignment(Qt::AlignHCenter);
+    E->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+
+    QListWidgetItem *F = new QListWidgetItem(contentsWidget);
+    F->setIcon(QIcon(":/Images/F.png"));
+    F->setText(tr("F"));
+    F->setTextAlignment(Qt::AlignHCenter);
+    F->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+
+    QListWidgetItem *G = new QListWidgetItem(contentsWidget);
+    G->setIcon(QIcon(":/Images/G.png"));
+    G->setText(tr("G"));
+    G->setTextAlignment(Qt::AlignHCenter);
+    G->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+
+    QListWidgetItem *H = new QListWidgetItem(contentsWidget);
+    H->setIcon(QIcon(":/Images/H.png"));
+    H->setText(tr("H"));
+    H->setTextAlignment(Qt::AlignHCenter);
+    H->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+
+    QListWidgetItem *I = new QListWidgetItem(contentsWidget);
+    I->setIcon(QIcon(":/Images/I.png"));
+    I->setText(tr("I"));
+    I->setTextAlignment(Qt::AlignHCenter);
+    I->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+
+    QListWidgetItem *J = new QListWidgetItem(contentsWidget);
+    J->setIcon(QIcon(":/Images/J.png"));
+    J->setText(tr("J"));
+    J->setTextAlignment(Qt::AlignHCenter);
+    J->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+
+    QListWidgetItem *K = new QListWidgetItem(contentsWidget);
+    K->setIcon(QIcon(":/Images/K.png"));
+    K->setText(tr("K"));
+    K->setTextAlignment(Qt::AlignHCenter);
+    K->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+
+    QListWidgetItem *L = new QListWidgetItem(contentsWidget);
+    L->setIcon(QIcon(":/Images/L.png"));
+    L->setText(tr("L"));
+    L->setTextAlignment(Qt::AlignHCenter);
+    L->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+
+    QListWidgetItem *M = new QListWidgetItem(contentsWidget);
+    M->setIcon(QIcon(":/Images/M.png"));
+    M->setText(tr("M"));
+    M->setTextAlignment(Qt::AlignHCenter);
+    M->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+
+    QListWidgetItem *N = new QListWidgetItem(contentsWidget);
+    N->setIcon(QIcon(":/Images/N.png"));
+    N->setText(tr("N"));
+    N->setTextAlignment(Qt::AlignHCenter);
+    N->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+
+    QListWidgetItem *O = new QListWidgetItem(contentsWidget);
+    O->setIcon(QIcon(":/Images/OA.png"));
+    O->setText(tr("O"));
+    O->setTextAlignment(Qt::AlignHCenter);
+    O->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+
+    QListWidgetItem *P = new QListWidgetItem(contentsWidget);
+    P->setIcon(QIcon(":/Images/P.png"));
+    P->setText(tr("P"));
+    P->setTextAlignment(Qt::AlignHCenter);
+    P->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+
+    QListWidgetItem *Q = new QListWidgetItem(contentsWidget);
+    Q->setIcon(QIcon(":/Images/Q.png"));
+    Q->setText(tr("Q"));
+    Q->setTextAlignment(Qt::AlignHCenter);
+    Q->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+
+    QListWidgetItem *R = new QListWidgetItem(contentsWidget);
+    R->setIcon(QIcon(":/Images/R.png"));
+    R->setText(tr("R"));
+    R->setTextAlignment(Qt::AlignHCenter);
+    R->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+
+    QListWidgetItem *S = new QListWidgetItem(contentsWidget);
+    S->setIcon(QIcon(":/Images/S.png"));
+    S->setText(tr("S"));
+    S->setTextAlignment(Qt::AlignHCenter);
+    S->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+
+    QListWidgetItem *T = new QListWidgetItem(contentsWidget);
+    T->setIcon(QIcon(":/Images/T.png"));
+    T->setText(tr("T"));
+    T->setTextAlignment(Qt::AlignHCenter);
+    T->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+
+    QListWidgetItem *U = new QListWidgetItem(contentsWidget);
+    U->setIcon(QIcon(":/Images/U.png"));
+    U->setText(tr("U"));
+    U->setTextAlignment(Qt::AlignHCenter);
+    U->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+
+    QListWidgetItem *V = new QListWidgetItem(contentsWidget);
+    V->setIcon(QIcon(":/Images/V.png"));
+    V->setText(tr("V"));
+    V->setTextAlignment(Qt::AlignHCenter);
+    V->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+
+    QListWidgetItem *W = new QListWidgetItem(contentsWidget);
+    W->setIcon(QIcon(":/Images/W.png"));
+    W->setText(tr("W"));
+    W->setTextAlignment(Qt::AlignHCenter);
+    W->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+
+    QListWidgetItem *X = new QListWidgetItem(contentsWidget);
+    X->setIcon(QIcon(":/Images/X.png"));
+    X->setText(tr("X"));
+    X->setTextAlignment(Qt::AlignHCenter);
+    X->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+
+    QListWidgetItem *Y = new QListWidgetItem(contentsWidget);
+    Y->setIcon(QIcon(":/Images/Y.png"));
+    Y->setText(tr("Y"));
+    Y->setTextAlignment(Qt::AlignHCenter);
+    Y->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+
+    QListWidgetItem *Z = new QListWidgetItem(contentsWidget);
+    Z->setIcon(QIcon(":/Images/Z.png"));
+    Z->setText(tr("Z"));
+    Z->setTextAlignment(Qt::AlignHCenter);
+    Z->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+
+    connect(contentsWidget,
+            SIGNAL(currentItemChanged(QListWidgetItem*,QListWidgetItem*)),
+            this, SLOT(changePage(QListWidgetItem*,QListWidgetItem*)));
+
+}
+
+void Forums::changePage(QListWidgetItem *current, QListWidgetItem *previous)
+{
+    if (!current)
+        current = previous;
+
+    a->setCurrentIndex(contentsWidget->row(current));
 }
 
 
@@ -356,13 +542,24 @@ Clubs::Clubs(QWidget *parent)
     ui->setupUi(this);
     this->setFixedSize(1024,768);
 }
-
+/*
 SchoolInfo::SchoolInfo(QWidget *parent)
     : QWidget(parent),
       ui(new Ui::schoolInfo)
 {
     ui->setupUi(this);
     this->setFixedSize(1024,768);
+}
+*/
+
+Map::Map(QWidget *parent)
+    : QWidget(parent),
+      ui(new Ui::Map)
+{
+    ui->setupUi(this);
+    this->setFixedSize(1024,768);
+
+
 }
 
 
@@ -391,3 +588,4 @@ About::About(QWidget *parent)
     ui->setupUi(this);
     this->setFixedSize(1024,768);
 }
+

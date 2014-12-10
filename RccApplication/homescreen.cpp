@@ -60,9 +60,10 @@ HomeScreen::HomeScreen()
     HomeScreenPagesWidget->addWidget(new NewsPage);
     HomeScreenPagesWidget->addWidget(new Forums);
     HomeScreenPagesWidget->addWidget(new Schedule);
-    HomeScreenPagesWidget->addWidget(new SchoolInfo);
-    HomeScreenPagesWidget->addWidget(new Appointments);
-    HomeScreenPagesWidget->addWidget(new BusSchedule);
+    //HomeScreenPagesWidget->addWidget(new Map);
+    //HomeScreenPagesWidget->addWidget(new SchoolInfo);
+    //HomeScreenPagesWidget->addWidget(new Appointments);
+    //HomeScreenPagesWidget->addWidget(new BusSchedule);
     HomeScreenPagesWidget->addWidget(new About);
     HomeScreenPagesWidget->setFixedWidth(1024);
     HomeScreenPagesWidget->setFixedHeight(768);
@@ -116,6 +117,13 @@ void HomeScreen::createIcons()
     ScheduleButton->setText(tr("Schedule"));
     ScheduleButton->setTextAlignment(Qt::AlignHCenter);
     ScheduleButton->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+    /*
+    QListWidgetItem *Map = new QListWidgetItem(contentsWidget);
+    Map->setIcon(QIcon(":/Images/About.png"));
+    Map->setText(tr("Maps"));
+    Map->setTextAlignment(Qt::AlignHCenter);
+    Map->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+
 
     QListWidgetItem *Club = new QListWidgetItem(contentsWidget);
     Club->setIcon(QIcon(":/Images/Clubs.png"));
@@ -129,6 +137,7 @@ void HomeScreen::createIcons()
     SchoolInfoButton->setTextAlignment(Qt::AlignHCenter);
     SchoolInfoButton->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
 
+
     QListWidgetItem *AppointmentsButton = new QListWidgetItem(contentsWidget);
     AppointmentsButton->setIcon(QIcon(":/Images/Appointments.png"));
     AppointmentsButton->setText(tr("Appointments"));
@@ -140,12 +149,15 @@ void HomeScreen::createIcons()
     BusSchedule->setText(tr("Bus Schedule"));
     BusSchedule->setTextAlignment(Qt::AlignHCenter);
     BusSchedule->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+    */
 
     QListWidgetItem *AboutButton = new QListWidgetItem(contentsWidget);
     AboutButton->setIcon(QIcon(":/Images/About.png"));
     AboutButton->setText(tr("About"));
     AboutButton->setTextAlignment(Qt::AlignHCenter);
     AboutButton->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+
+
 
     connect(contentsWidget,
             SIGNAL(currentItemChanged(QListWidgetItem*,QListWidgetItem*)),

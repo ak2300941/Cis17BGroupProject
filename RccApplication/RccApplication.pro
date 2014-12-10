@@ -23,7 +23,10 @@ SOURCES += main.cpp\
     user.cpp \
     globals.cpp \
     homescreen.cpp \
-    homescreenpages.cpp
+    homescreenpages.cpp \
+    subforum.cpp \
+    thread.cpp \
+    respond.cpp
 
 HEADERS  += loginpage.h \
     sha1.h \
@@ -34,7 +37,10 @@ HEADERS  += loginpage.h \
     user.h \
     globals.h \
     homescreen.h \
-    homescreenpages.h
+    homescreenpages.h \
+    subforum.h \
+    thread.h \
+    respond.h
 
 FORMS    += loginpage.ui \
     createaccount.ui \
@@ -45,7 +51,11 @@ FORMS    += loginpage.ui \
     Appointments.ui \
     busSchedule.ui \
     about.ui \
-    clubs.ui
+    clubs.ui \
+    Map.ui \
+    subforum.ui \
+    thread.ui \
+    respond.ui
 
 RESOURCES += \
     Images.qrc \
