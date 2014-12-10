@@ -424,16 +424,33 @@ Schedule::Schedule(QWidget *parent)
     ui->setupUi(this);
     this->setFixedSize(1024,768);
     //Read in Class file
-    QFile classFile("class.txt");
-    classFile.open(QIODevice::ReadOnly);
-    QTextStream textStream(&classFile);
-    QString line;
-    while(!textStream.atEnd())
-    {
-        line=textStream.readLine();
-        ui->classList->addItem(line);
-    }
-    classFile.close();
+//    QFile classFile("class.txt");
+//    classFile.open(QIODevice::ReadOnly);
+//    QTextStream textStream(&classFile);
+//    QString line;
+//    while(!textStream.atEnd())
+//    {
+//        line=textStream.readLine();
+//        ui->classList->addItem(line);
+//    }
+//    classFile.close();
+    //Add Classes Manually
+    ui->classList->addItem("MAT-1A");
+    ui->classList->addItem("MAT-1B");
+    ui->classList->addItem("MAT-1C");
+    ui->classList->addItem("ENG-1A");
+    ui->classList->addItem("ENG-1B");
+    ui->classList->addItem("PHY-4A");
+    ui->classList->addItem("PHY-4B");
+    ui->classList->addItem("PHY-4C");
+    ui->classList->addItem("PHY-4D");
+    ui->classList->addItem("CSC-5");
+    ui->classList->addItem("CSC-17A");
+    ui->classList->addItem("CSC-17B");
+    ui->classList->addItem("CSC-17C");
+    ui->classList->addItem("BIO-1");
+    ui->classList->addItem("ECO-4");
+
     //Label for student
     ui->studentLabel->setText(Globals::getSessionEmail());
     //Read if Student File is there
@@ -442,6 +459,7 @@ Schedule::Schedule(QWidget *parent)
     QFile myFile(name1+name2);
     myFile.open(QIODevice::ReadOnly);
     QTextStream stream(&myFile);
+    QString line;
     while(!stream.atEnd())
     {
         line=stream.readLine();
