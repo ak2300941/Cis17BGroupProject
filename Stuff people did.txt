@@ -1,0 +1,18 @@
+Michael:
+Worked on making the database driver.
+Made a qt database api for the database driver (that was never made to work)
+created the api used for file io using qsettings,
+made the create account functionality
+improved upon the login system
+
+Andrew:
+
+David S:
+ 
+David P:
+
+Josh:
+
+Scott:
+
+Edgar:
