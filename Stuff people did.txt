@@ -6,6 +6,9 @@ made the create account functionality
 improved upon the login system
 
 Andrew:
+Created a login system using hashes.
+Created a class scheduler.
+
 
 David S:
  
