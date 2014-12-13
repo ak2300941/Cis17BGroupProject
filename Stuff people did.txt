@@ -18,6 +18,7 @@ Made QstackedWidgets to work with QListwidgets in the main homepage of our progr
 
  
 David P:
+WriteUp
 
 Josh:
 CSS
