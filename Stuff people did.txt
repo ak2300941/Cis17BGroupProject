@@ -11,10 +11,16 @@ Created a class scheduler.
 
 
 David S:
+Splash Screen
+Forums
+Made Framework for layout of the application
+Made QstackedWidgets to work with QListwidgets in the main homepage of our program
+
  
 David P:
 
 Josh:
+CSS
 
 Scott:
 
