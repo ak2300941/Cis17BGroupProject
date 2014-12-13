@@ -64,7 +64,7 @@ HomeScreen::HomeScreen()
     //HomeScreenPagesWidget->addWidget(new SchoolInfo);
     //HomeScreenPagesWidget->addWidget(new Appointments);
     //HomeScreenPagesWidget->addWidget(new BusSchedule);
-    HomeScreenPagesWidget->addWidget(new About);
+    //HomeScreenPagesWidget->addWidget(new About);
     HomeScreenPagesWidget->setFixedWidth(1024);
     HomeScreenPagesWidget->setFixedHeight(768);
 

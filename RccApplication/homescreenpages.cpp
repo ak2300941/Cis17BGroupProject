@@ -552,7 +552,7 @@ void Schedule::moveCurrentItem(QListWidget *source, QListWidget *target)
         delete source->currentItem();
     }
 }
-
+/*
 Clubs::Clubs(QWidget *parent)
     : QWidget(parent),
       ui(new Ui::Clubs)
@@ -560,6 +560,7 @@ Clubs::Clubs(QWidget *parent)
     ui->setupUi(this);
     this->setFixedSize(1024,768);
 }
+*/
 /*
 SchoolInfo::SchoolInfo(QWidget *parent)
     : QWidget(parent),
@@ -569,7 +570,7 @@ SchoolInfo::SchoolInfo(QWidget *parent)
     this->setFixedSize(1024,768);
 }
 */
-
+/*
 Map::Map(QWidget *parent)
     : QWidget(parent),
       ui(new Ui::Map)
@@ -606,4 +607,5 @@ About::About(QWidget *parent)
     ui->setupUi(this);
     this->setFixedSize(1024,768);
 }
+*/
 

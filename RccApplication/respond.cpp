@@ -61,6 +61,7 @@ Respond::~Respond()
     delete ui;
 }
 
+
 void Respond::on_pushButton_clicked()
 {
     this->close();
